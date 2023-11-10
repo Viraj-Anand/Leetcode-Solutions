@@ -6,8 +6,9 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 """
 
+from typing import Optional
 class Solution:
-    def cloneGraph(self, node: 'Node') -> 'Node':
+    def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
 
         dic={}
 
@@ -19,7 +20,9 @@ class Solution:
 
             for i in node.neighbors:
                 clone.neighbors.append(dfs(i))
-
             return clone
 
-        return dfs(node) if node else None        
+        return dfs(node) if node else None
+
+
+        
