@@ -9,11 +9,10 @@ class Solution:
             return None
         if not head.next:
             return head
-
-        odd_head=head
-        even_head=odd_head.next
-        curr_odd=odd_head
-        curr_even=even_head
+        odd=head
+        even=head.next
+        curr_odd=odd
+        curr_even=even
 
         while curr_even and curr_even.next:
             curr_odd.next=curr_even.next
@@ -21,7 +20,6 @@ class Solution:
             curr_even.next=curr_odd.next
             curr_even=curr_even.next
 
-
-        curr_odd.next=even_head
-        return odd_head
+        curr_odd.next=even
+        return odd
         
